@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ConverterController extends GetxController {
@@ -10,6 +11,7 @@ class ConverterController extends GetxController {
   var toUnit = "".obs;
 String get formattedResult =>
     result.value.toStringAsFixed(5);
+final TextEditingController textController = TextEditingController();
 
   /// =======================
   /// LENGTH (base = meter)
@@ -90,7 +92,7 @@ String get formattedResult =>
 
   void setCategory(String category) {
     selectedCategory.value = category;
-
+     resetValues();
     switch (category) {
       case "Length":
         fromUnit.value = lengthUnits.keys.first;
@@ -179,7 +181,6 @@ void updateInput(String value) {
       return;
     }
 
-    /// Other categories (base conversion method)
     if (currentUnits.isEmpty) return;
 
     double baseValue =
@@ -188,6 +189,15 @@ void updateInput(String value) {
     result.value =
         baseValue / currentUnits[toUnit.value]!;
   }
+void resetValues() {
+  inputValue.value = 0;
+  result.value = 0;
+  fromUnit.value = "";
+  toUnit.value = "";
+  textController.clear();
+}
+
+
   void swapUnits() {
   String temp = fromUnit.value;
   fromUnit.value = toUnit.value;

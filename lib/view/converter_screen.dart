@@ -168,6 +168,7 @@ class ConverterScreen extends StatelessWidget {
 
                   /// INPUT
                   TextField(
+                    controller: controller.textController,
                     keyboardType: const TextInputType.numberWithOptions(
                       decimal: true,
                     ),
