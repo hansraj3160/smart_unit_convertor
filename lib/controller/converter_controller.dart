@@ -9,8 +9,10 @@ class ConverterController extends GetxController {
 
   var fromUnit = "".obs;
   var toUnit = "".obs;
-String get formattedResult =>
-    result.value.toStringAsFixed(5);
+String get formattedResult {
+  String symbol = getUnitSymbol(toUnit.value);
+  return "${result.value.toStringAsFixed(4)} $symbol";
+}
 final TextEditingController textController = TextEditingController();
 
   /// =======================
@@ -189,6 +191,12 @@ void updateInput(String value) {
     result.value =
         baseValue / currentUnits[toUnit.value]!;
   }
+  String getUnitSymbol(String unit) {
+  final match = RegExp(r'\((.*?)\)').firstMatch(unit);
+  return match != null ? match.group(1)! : unit;
+}
+
+
 void resetValues() {
   inputValue.value = 0;
   result.value = 0;

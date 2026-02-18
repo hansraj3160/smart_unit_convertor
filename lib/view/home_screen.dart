@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   Future<void> openPrivacyPolicy() async {
-    final Uri url = Uri.parse("https://yourdomain.com/privacy.html");
+    final Uri url = Uri.parse("https://sites.google.com/view/unit-converter--privacy/home");
     await launchUrl(url, mode: LaunchMode.externalApplication);
   }
 
