@@ -15,9 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // Future.delayed(const Duration(seconds: 2), () {
-    //   Get.offNamed(AppRoutes.home);
-    // });
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.offNamed(AppRoutes.home);
+    });
   }
 
   @override
@@ -27,9 +27,12 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           children: [
 
-           Image.asset(
-            "assets/images/ff.png",
-            fit: BoxFit.cover,
+           Expanded(
+             child: Image.asset(
+              "assets/ff.png",
+              fit: BoxFit.fill,
+             
+             ),
            )
           ],
         ),
