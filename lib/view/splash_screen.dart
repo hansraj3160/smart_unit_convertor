@@ -22,11 +22,16 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return   Scaffold(
       body: Center(
-        child: Text(
-          "Unit Converter",
-          style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+        child: Column(
+          children: [
+
+           Image.asset(
+            "assets/images/welcome.png",
+            fit: BoxFit.cover,
+           )
+          ],
         ),
       ),
     );

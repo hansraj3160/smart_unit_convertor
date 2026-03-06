@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
   centerTitle: true,
   backgroundColor: Colors.transparent,
   title: const Text(
-    "Unit Converter",
+    "SmartConvert",
     style: TextStyle(
       fontWeight: FontWeight.bold,
       color: Colors.white,
@@ -92,7 +92,10 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-            
+             Image.asset(
+            "assets/images/welcome.jpeg",
+            fit: BoxFit.cover,
+           ),
                           Container(
                             padding: const EdgeInsets.all(13),
                             decoration: BoxDecoration(

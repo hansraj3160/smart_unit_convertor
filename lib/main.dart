@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
        defaultTransition: Transition.fadeIn,
   transitionDuration: const Duration(milliseconds: 300),
-      title: "Unit Converter",
+      title: "SmartConvert",
       initialRoute: AppRoutes.splash,
       getPages: AppRoutes.routes,
        theme: ThemeData(
